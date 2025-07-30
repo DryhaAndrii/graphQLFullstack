@@ -5,3 +5,13 @@
 type Query {
   hello: String!
 }
+
+type Mutation {
+  register(input: AuthUserInput!): String!
+  login(input: AuthUserInput!): String!
+}
+
+input AuthUserInput {
+  email: String!
+  password: String!
+}
