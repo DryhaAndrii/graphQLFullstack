@@ -1,0 +1,106 @@
+
+
+@import "tailwindcss";
+
+:root {
+  --background: #d7d5cf;
+  --foreground: #141f24;
+  --body-gradient: linear-gradient(
+    135deg,
+    #b9bcbd 0%,
+    #b5baba 10%,
+    #9ea5a7 30%,
+    #959ea2 100%
+  );
+  --central-panel-gradient: linear-gradient(
+    150deg,
+    #e9e6e0 0%,
+    #dbdad6 33%,
+    #d2d0cc 66%,
+    #c8c6c2 100%
+  );
+
+  --central-panel-shadow: 4px 4px 14px 0px var(--foreground),
+    0 0 20px 2px var(--background);
+
+  --text-shadow: 0px 0px 2px var(--foreground);
+  --small-text-shadow: 0px 0px 1px var(--foreground);
+
+  --input-shadow: inset 0px 0px 3px var(--foreground);
+
+  --default-shadow: 0px 0px 6px 0px var(--foreground);
+
+  --hover-shadow: 0px 4px 10px 0px var(--foreground);
+  --active-shadow: inset 0px 0px 6px 0px var(--background);
+
+  --inset-shadow: inset 0px 0px 5px var(--foreground);
+}
+
+.dark {
+  --background: #141f24;
+  --foreground: #9baeb7;
+  --body-gradient: linear-gradient(
+    135deg,
+    #2f454f 0%,
+    #253740 10%,
+    #141f24 30%,
+    #0c1417 100%
+  );
+  --central-panel-gradient: linear-gradient(
+    150deg,
+    #304d5c 0%,
+    #253d49 33%,
+    #192a31 66%,
+    #0f1a1f 100%
+  );
+
+  --central-panel-shadow: 1px 1px 14px 0px var(--foreground),
+    0 0 20px 2px var(--background);
+
+  --text-shadow: 0px 0px 2px var(--foreground);
+  --small-text-shadow: 0px 0px 1px var(--foreground);
+
+  --input-shadow: inset 0px 0px 3px var(--foreground);
+
+  --default-shadow: 0px 0px 6px 0px var(--foreground);
+
+  --hover-shadow: 0px 4px 10px 0px var(--foreground);
+  --active-shadow: inset 0px 0px 6px 0px var(--background);
+}
+
+* {
+  font-family: var(--font-montserrat), sans-serif;
+  box-sizing: border-box;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: var(--font-montserrat), sans-serif;
+  border: none;
+  outline: none;
+}
+
+
+.custom-scroll:has(> *:last-child) {
+  padding-right: 6px;
+}
+
+.custom-scroll {
+  scrollbar-gutter: stable;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.753);
+  border-radius: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}

@@ -9,7 +9,7 @@ async function bootstrap() {
   app.use(cookieParser());
 
   app.enableCors({
-    origin: process.env.CLIENT, // фронт
+    origin: process.env.CLIENT,
     credentials: true,
   });
 
