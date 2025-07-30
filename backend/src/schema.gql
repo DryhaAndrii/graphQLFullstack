@@ -4,6 +4,7 @@
 
 type Query {
   hello: String!
+  getSecretData: String!
 }
 
 type Mutation {

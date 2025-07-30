@@ -1,8 +1,10 @@
-import { Resolver, Mutation, Args, Context } from '@nestjs/graphql';
+import { Resolver, Mutation, Args, Context, Query } from '@nestjs/graphql';
 import { Response } from 'express';
 
 import { AuthService } from './auth.service';
 import { AuthUserInput } from './dto/auth-user.input';
+import { UseGuards } from '@nestjs/common';
+import { GqlAuthGuard } from './guards/gql-auth.guard';
 
 const COOKIE_EXPIRES_IN =
   1000 * 60 * 60 * (Number(process.env.COOKIE_EXPIRES_IN_HOURS) || 1); //1000 * 60 * 60 is 1 hour
@@ -38,5 +40,12 @@ export class AuthResolver {
     const { accessToken } = await this.authService.login(input);
     this.setAccessTokenCookie(res, accessToken);
     return 'User login successful';
+  }
+
+  @Query(() => String)
+  @UseGuards(GqlAuthGuard)
+  getSecretData(@Context('req') req): string {
+    const user = req.user;
+    return `Hello, ${user.email}`;
   }
 }
