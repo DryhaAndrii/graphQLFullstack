@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "./components/header/header";
+import Hello from "./components/hello";
 import CentralPanel from "./components/ui/centralPanel/centralPanel";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
         <CentralPanel>
           <div className="flex flex-col gap-5 p-2 md:p-4 w-full h-full">
             <Header />
+            <Hello />
           </div>
         </CentralPanel>
       </div>
