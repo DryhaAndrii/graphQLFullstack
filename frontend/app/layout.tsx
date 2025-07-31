@@ -1,22 +1,15 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
+
+import { ThemeProvider } from "./components/theme/theme";
+import Toaster from "./components/toaster/toaster";
+import { ApolloWrapper } from "@/apollo/apolloWrapper";
+
 import "./globals.css";
-import { ThemeProvider } from "./components/ui/theme/theme";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "GraphQL Using App",
-  description: "Here is the description",
-};
 
 export default function RootLayout({
   children,
@@ -24,11 +17,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-foreground w-dvw h-dvh">
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
+        className={`${montserrat.variable} antialiased bg-body-gradient min-h-dvh flex items-center justify-center`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <Toaster />
+
+        <ThemeProvider>
+          <ApolloWrapper>{children}</ApolloWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );

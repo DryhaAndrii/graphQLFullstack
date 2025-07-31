@@ -1,17 +1,11 @@
-
-
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #d7d5cf;
   --foreground: #141f24;
-  --body-gradient: linear-gradient(
-    135deg,
-    #b9bcbd 0%,
-    #b5baba 10%,
-    #9ea5a7 30%,
-    #959ea2 100%
-  );
+  --body-gradient: linear-gradient(135deg, #b9bcbd 0%, #b5baba 10%, #9ea5a7 30%, #959ea2 100%);
   --central-panel-gradient: linear-gradient(
     150deg,
     #e9e6e0 0%,
@@ -20,8 +14,7 @@
     #c8c6c2 100%
   );
 
-  --central-panel-shadow: 4px 4px 14px 0px var(--foreground),
-    0 0 20px 2px var(--background);
+  --central-panel-shadow: 4px 4px 14px 0px var(--foreground), 0 0 20px 2px var(--background);
 
   --text-shadow: 0px 0px 2px var(--foreground);
   --small-text-shadow: 0px 0px 1px var(--foreground);
@@ -39,13 +32,7 @@
 .dark {
   --background: #141f24;
   --foreground: #9baeb7;
-  --body-gradient: linear-gradient(
-    135deg,
-    #2f454f 0%,
-    #253740 10%,
-    #141f24 30%,
-    #0c1417 100%
-  );
+  --body-gradient: linear-gradient(135deg, #2f454f 0%, #253740 10%, #141f24 30%, #0c1417 100%);
   --central-panel-gradient: linear-gradient(
     150deg,
     #304d5c 0%,
@@ -54,8 +41,7 @@
     #0f1a1f 100%
   );
 
-  --central-panel-shadow: 1px 1px 14px 0px var(--foreground),
-    0 0 20px 2px var(--background);
+  --central-panel-shadow: 1px 1px 14px 0px var(--foreground), 0 0 20px 2px var(--background);
 
   --text-shadow: 0px 0px 2px var(--foreground);
   --small-text-shadow: 0px 0px 1px var(--foreground);
@@ -67,6 +53,7 @@
   --hover-shadow: 0px 4px 10px 0px var(--foreground);
   --active-shadow: inset 0px 0px 6px 0px var(--background);
 }
+
 
 * {
   font-family: var(--font-montserrat), sans-serif;
@@ -82,12 +69,11 @@ select {
   outline: none;
 }
 
-
 .custom-scroll:has(> *:last-child) {
   padding-right: 6px;
 }
 
-.custom-scroll {
+.custom-scroll{
   scrollbar-gutter: stable;
 }
 
