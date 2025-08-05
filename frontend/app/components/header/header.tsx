@@ -1,7 +1,7 @@
 "use client";
 import { Roboto } from "next/font/google";
 
-import { ThemeSwitcher } from "@/app/components/theme/theme";
+import { ThemeSwitcher } from "@/app/components/ui/theme/theme";
 import HamburgerMenu from "../ui/hamburgerMenu/hamburgerMenu";
 
 const roboto = Roboto({

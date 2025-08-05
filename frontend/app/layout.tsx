@@ -1,7 +1,7 @@
 import { Montserrat } from "next/font/google";
 
-import { ThemeProvider } from "./components/theme/theme";
-import Toaster from "./components/toaster/toaster";
+import { ThemeProvider } from "./components/ui/theme/theme";
+import Toaster from "./components/ui/toaster/toaster";
 import { ApolloWrapper } from "@/apollo/apolloWrapper";
 
 import "./globals.css";
