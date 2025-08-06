@@ -16,10 +16,12 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 type Documents = {
     "mutation Register($input: AuthUserInput!) {\n  register(input: $input)\n}\n\nmutation Login($input: AuthUserInput!) {\n  login(input: $input)\n}": typeof types.RegisterDocument,
     "query Hello {\n  hello\n}": typeof types.HelloDocument,
+    "query GetSecretData {\n  getSecretData\n}": typeof types.GetSecretDataDocument,
 };
 const documents: Documents = {
     "mutation Register($input: AuthUserInput!) {\n  register(input: $input)\n}\n\nmutation Login($input: AuthUserInput!) {\n  login(input: $input)\n}": types.RegisterDocument,
     "query Hello {\n  hello\n}": types.HelloDocument,
+    "query GetSecretData {\n  getSecretData\n}": types.GetSecretDataDocument,
 };
 
 /**
@@ -44,6 +46,10 @@ export function graphql(source: "mutation Register($input: AuthUserInput!) {\n  
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "query Hello {\n  hello\n}"): (typeof documents)["query Hello {\n  hello\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query GetSecretData {\n  getSecretData\n}"): (typeof documents)["query GetSecretData {\n  getSecretData\n}"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

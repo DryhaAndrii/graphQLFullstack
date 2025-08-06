@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import { ThemeProvider } from "./components/ui/theme/theme";
 import Toaster from "./components/ui/toaster/toaster";
 import { ApolloWrapper } from "@/apollo/apolloWrapper";
+import HooksCaller from "./components/hooksCaller";
 
 import "./globals.css";
 
@@ -24,7 +25,10 @@ export default function RootLayout({
         <Toaster />
 
         <ThemeProvider>
-          <ApolloWrapper>{children}</ApolloWrapper>
+          <ApolloWrapper>
+            <HooksCaller />
+            {children}
+          </ApolloWrapper>
         </ThemeProvider>
       </body>
     </html>
